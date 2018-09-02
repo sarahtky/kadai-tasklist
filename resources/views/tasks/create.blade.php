@@ -5,15 +5,34 @@
 
 <h1>タスク新規作成ページ</h1>
 
-    {!! Form::model($task, ['route' => 'tasks.store']) !!}
+<div class="row">
+        <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-sd-offset-2 col-sd-8 col-lg-offset-3 col-lg-6">
     
-        {!! Form::label('status', 'ステータス:') !!}
-        {!! Form::select('status', ['New','Working','Waiting','Done']) !!}
+    {!! Form::model($task, ['route' => 'tasks.store']) !!}
 
-        {!! Form::label('content', 'タスク:') !!}
-        {!! Form::text('content') !!}
+                <div class="dropdown">
+                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                ステータス<span class="caret"></span>
+                 </button>
+                  <!-- 選択肢 -->
+                  <ul class="dropdown-menu">
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">Working</a></li>
+                    <li><a href="#">Waiting</a></li>
+                    <li><a href="#">Done</a></li>
+                  </ul>
+                </div>
+                
+                <div class="form-group">
+                    {!! Form::label('content', 'タスク:') !!}
+                    {!! Form::text('content', null, ['class' => 'form-control']) !!}
+                </div>
 
-        {!! Form::submit('投稿') !!}
+                {!! Form::submit('投稿', ['class' => 'btn btn-primary']) !!}
 
-    {!! Form::close() !!}
+            {!! Form::close() !!}
+            
+    </div>
+</div>
+    
 @endsection
