@@ -11,8 +11,8 @@
     {!! Form::model($task, ['route' => 'tasks.store']) !!}
     
     <input type="select" class="dropdown-menu">
-        {!! Form::label('status', 'ステータス:') !!}
-        {!! Form::select('status', ['New', 'Working', 'Waiting', 'Done'], null, ['class' => 'field'])!!}
+    {!! Form::label('status', 'ステータス:') !!}
+    {!! Form::select('status', ['New', 'Working', 'Waiting', 'Done'], null, ['class' => 'field'])!!}
 
         <div class="form-group">
         {!! Form::label('content', 'タスク:') !!}
